@@ -1,31 +1,36 @@
 import React, {Component} from 'react';
+import './app.scss';
 import Table from './table/table';
+
 
 class App extends Component {
   
-  
-  constructor() {
-    super();
-    this.state = {color: 'blue'};
-    this.hoverHeader.bind(this);
-  }
 
-  
-  hoverHeader(){
-    //this.state = {color: 'red'};
-    this.setState({color: 'red'});
-
-    console.log(this);
-  }
-  outHeader(){
-    this.setState({color: 'blue'});
-  }
 
   render() {
-
+    const data1 = {
+      number: 3123323,
+      supplier: 'PF Concept'
+    };
+    const data2 = {
+      number: 2123323,
+      supplier: 'PF Concept'
+    };
     return(
-      <div>
-        <Table />
+      <div>        
+        <canvas/>
+        <Table 
+          type="Kundenauftrag"
+          x="50"
+          y="200"
+          data={data1}
+        />
+        <Table 
+          type="Bestellung"
+          x="50"
+          y="500"
+          data={data2}
+        />
       </div>
     );
   }
